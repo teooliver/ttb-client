@@ -2,7 +2,6 @@
 
 #### Frontend
 
-- Fix Dockerfile/docker-compose
 - Add tests to `ProjectSelect` and `StopWatch`
 - Add add mockup backend test implementation so we can use the app without the backend and run tests.
 - Add storybook and maybe storyshot testing using playwright?
@@ -16,5 +15,8 @@
 - ~~Should I keep using MSW or just mock fetch requests as normal?~~ (YES)
 - ~~Add Spinner for loading states.~~
 - ~~Implement `load more` in Timer page using `useInfiniteQuery`.~~
+- ~~fix Dockerfile/docker-compose~~
 
 # KNOWN BUGS:
+
+- Edtiable Input Header changes heigh and widht when in editing mode.
