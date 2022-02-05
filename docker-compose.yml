@@ -1,0 +1,14 @@
+services:
+  react-app:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/app/
+    environment:
+      - SKIP_PREFLIGHT_CHECK=true
+    # depends_on:
+    #   - node_server
+    # profiles: ["frontend"]
