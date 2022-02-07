@@ -2,6 +2,7 @@
 
 #### Frontend
 
+- add fake auth (simple user/password form to ilustrate the flow)
 - Run Playwright and Storybook in Docker
 - Add `husky` end configure git hooks for commits, merge and push
 - Add ci test pipelines
@@ -20,4 +21,4 @@
 
 # KNOWN BUGS:
 
-- Edtiable Input Header changes heigh and widht when in editing mode.
+- ~~Edtiable Input Header changes heigh and widht when in editing mode.~~
