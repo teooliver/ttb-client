@@ -10,13 +10,11 @@ import styles from './ClockControls.module.css';
 // TODO: recieve only projectId instead of the whole project object
 interface ControlsProps {
   setTimeInSeconds: Function;
-  // timeInSeconds: number;
   selectedProject: ISelectedProject;
 }
 
 export const ClockControls: FC<ControlsProps> = ({
   setTimeInSeconds,
-  // timeInSeconds,
   selectedProject,
 }) => {
   const [intervalId, setIntervalId] = useState<number>(0);
