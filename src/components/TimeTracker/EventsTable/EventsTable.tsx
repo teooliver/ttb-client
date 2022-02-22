@@ -1,6 +1,6 @@
 import format from 'date-fns/format';
 import { calculateTimer } from '../../../utils/timer';
-import EventRow from '../EventsRow/EventRow';
+import EventRow from '../EventRow/EventRow';
 import styles from './EventsTable.module.css';
 import { useGetInifiniteTasks } from '../../../hooks/useGetInifiniteTasks';
 import Spinner from '../../Spinner/Spinner';
