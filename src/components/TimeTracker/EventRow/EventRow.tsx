@@ -70,7 +70,7 @@ const EventRow: FC<Props> = ({ task }) => {
             )}
           </span>
         </div>
-        <div className={styles['rigth-side']}>
+        <div className={styles['right-side']}>
           <span className={styles['date-picker']}>
             <DatePicker
               selected={startDate}

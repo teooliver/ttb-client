@@ -20,7 +20,7 @@
 .list-item:hover {
   background-color: var(--item-hover-brackground);
 }
-.list-item:hover .rigth-side {
+.list-item:hover .right-side {
   background-color: var(--item-hover-brackground);
 }
 
@@ -60,7 +60,7 @@
   display: inline-block;
 }
 
-.rigth-side {
+.right-side {
   position: absolute;
   background-color: var(--body-background);
   right: 0;
@@ -71,12 +71,12 @@
 }
 
 @media (max-width: 1024px) {
-  .rigth-side {
+  .right-side {
     padding-bottom: 3rem;
   }
 }
 
-.rigth-side span {
+.right-side span {
   display: inline-block;
 }
 
