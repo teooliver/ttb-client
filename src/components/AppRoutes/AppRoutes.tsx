@@ -8,7 +8,7 @@ import styles from './AppRoutes.module.css';
 
 export const AppRoutes = () => {
   return (
-    <section className={styles.AppRoutes}>
+    <section aria-label='application area' className={styles.AppRoutes}>
       <Routes>
         <Route path={'/'} element={<TimeTracker />} />
         <Route path={'/projects'} element={<Projects />} />

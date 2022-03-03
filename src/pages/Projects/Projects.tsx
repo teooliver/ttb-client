@@ -11,9 +11,9 @@ const Projects = () => {
   const close = () => setShowDialog(false);
 
   return (
-    <section className='Projects'>
+    <section aria-labelledby='projectsLabel' className='Projects'>
       <header className={styles['header']}>
-        <h2>Projects</h2>
+        <h2 id='projectsLabel'>Projects</h2>
         <button className='btn btn-primary' onClick={open}>
           <i>
             <PlusCircle size='1rem' />

@@ -3,7 +3,7 @@ import Stopwatch from '../../components/TimeTracker/StopWatch/Stopwatch';
 
 const TimeTracker = () => {
   return (
-    <section>
+    <section aria-label='time tracker'>
       <Stopwatch />
       <EventsTable />
     </section>
