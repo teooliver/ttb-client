@@ -18,6 +18,7 @@
 - ~~Add Spinner for loading states.~~
 - ~~Implement `load more` in Timer page using `useInfiniteQuery`.~~
 - ~~fix Dockerfile/docker-compose~~
+- add favicon
 
 # KNOWN BUGS:
 

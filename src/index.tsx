@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TaskProvider from './context/TaskContext';
@@ -9,9 +8,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 import '@reach/listbox/styles.css';
 import '@reach/dialog/styles.css';
 
-const queryClient = new QueryClient();
+import * as ReactDOMClient from 'react-dom/client';
 
-console.log('======> REACT_APP_ENV', process.env.REACT_APP_ENV);
+const container = document.getElementById('root');
+const root = ReactDOMClient.createRoot(container as HTMLDivElement);
+const queryClient = new QueryClient();
 
 if (process.env.REACT_APP_ENV === 'enable_mockups') {
   const { worker } = require('./mocks/browser');
@@ -19,7 +20,7 @@ if (process.env.REACT_APP_ENV === 'enable_mockups') {
   worker.start();
 }
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <TaskProvider>
@@ -28,8 +29,7 @@ ReactDOM.render(
         </BrowserRouter>
       </TaskProvider>
     </QueryClientProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

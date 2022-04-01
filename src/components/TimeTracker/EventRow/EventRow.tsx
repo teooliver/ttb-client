@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { Dot } from '../../icons/Dot';
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 import { IDbTask } from '../../../types/task';

@@ -27,23 +27,21 @@ const EventsTable = () => {
               Math.round(group.total_time)
             );
             return (
-              <>
-                <ul
-                  className={styles['EventsTable']}
-                  key={group._id}
-                  data-testid='events-table'
-                >
-                  <li className={styles['date-header']}>
-                    <span>{format(new Date(group._id), 'EEE, dd LLL')}</span>
-                    <span className={styles['day-total']}>
-                      {hours}:{minutes}:{seconds}
-                    </span>
-                  </li>
-                  {group.tasks.map((task) => (
-                    <EventRow key={task._id} task={task} />
-                  ))}
-                </ul>
-              </>
+              <ul
+                key={group._id}
+                className={styles['EventsTable']}
+                data-testid='events-table'
+              >
+                <li className={styles['date-header']}>
+                  <span>{format(new Date(group._id), 'EEE, dd LLL')}</span>
+                  <span className={styles['day-total']}>
+                    {hours}:{minutes}:{seconds}
+                  </span>
+                </li>
+                {group.tasks.map((task) => (
+                  <EventRow key={task._id} task={task} />
+                ))}
+              </ul>
             );
           })
         )}
