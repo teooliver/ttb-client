@@ -11,9 +11,9 @@ import '@reach/dialog/styles.css';
 
 const queryClient = new QueryClient();
 
-console.log('======> NODE_ENV', process.env.NODE_ENV);
+console.log('======> REACT_APP_ENV', process.env.REACT_APP_ENV);
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.REACT_APP_ENV === 'enable_mockups') {
   const { worker } = require('./mocks/browser');
 
   worker.start();
