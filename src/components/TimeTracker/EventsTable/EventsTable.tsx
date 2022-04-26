@@ -4,7 +4,6 @@ import EventRow from '../EventRow/EventRow';
 import styles from './EventsTable.module.css';
 import { useGetInifiniteTasks } from '../../../hooks/useGetInifiniteTasks';
 import Spinner from '../../Spinner/Spinner';
-import { useGetGroupedTasks } from '../../../hooks/useGetGroupedTasks';
 
 const EventsTable = () => {
   const {
@@ -16,12 +15,6 @@ const EventsTable = () => {
     isError,
     isLoading,
   } = useGetInifiniteTasks();
-  // const {
-  //   data: groupedTasks,
-  //   isSuccess,
-  //   isError,
-  //   isLoading,
-  // } = useGetGroupedTasks(1);
 
   return (
     <>
