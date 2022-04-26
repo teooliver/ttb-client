@@ -32,6 +32,7 @@ export const useCreateTask = () => {
   const createTaskMutation = useMutation(createTask, {
     onSuccess: () => {
       queryClient.invalidateQueries('tasks');
+      queryClient.invalidateQueries('infinite-tasks');
     },
   });
 
