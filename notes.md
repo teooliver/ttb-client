@@ -19,6 +19,8 @@
 - ~~Implement `load more` in Timer page using `useInfiniteQuery`.~~
 - ~~fix Dockerfile/docker-compose~~
 - add favicon
+- Double check React Query impls, kind of slow at the moment.
+- Check XState and StateMachines
 
 # KNOWN BUGS:
 
