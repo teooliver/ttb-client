@@ -1,6 +1,6 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-interface User {
+export interface User {
   name: string;
   email: string;
 }
@@ -39,4 +39,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+export const useAuth = () => {
+  return useContext(AuthContext);
 };
