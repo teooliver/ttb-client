@@ -29,6 +29,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "list:tests": "find . -type f -name '*.test.*' ! -path './node_modules/*'",
+    "list:e2e-tests": "find . -type f -name '*.e2e.test.*' ! -path './node_modules/*'",
     "list:stories": "find . -type f -name '*.stories.*' ! -path './node_modules/*'"
   },
   "eslintConfig": {
