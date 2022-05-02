@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import TaskProvider from './context/TaskContext';
+import TaskProvider from './context/TaskContext/TaskContext';
 import { BrowserRouter } from 'react-router-dom';
 
 const queryClient = new QueryClient();

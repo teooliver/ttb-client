@@ -1,5 +1,5 @@
 import { FC, useContext, useState } from 'react';
-import { TaskContext } from '../../../context/TaskContext';
+import { TaskContext } from '../../../context/TaskContext/TaskContext';
 import { useCreateTask } from '../../../hooks/useCreateTask';
 import { PlayCircle } from '../../icons/PlayCircle';
 import { StopCircle } from '../../icons/StopCircle';

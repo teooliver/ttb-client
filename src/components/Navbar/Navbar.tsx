@@ -7,6 +7,7 @@ import { FileText } from '../icons/FileText';
 import { Folder } from '../icons/Folder';
 import { PersonSquare } from '../icons/PersonSquare';
 import styles from './Navbar.module.css';
+import { LoginButton } from '../LoginButton/LoginButton';
 
 const Navbar = () => {
   const queryClient = useQueryClient();
@@ -111,6 +112,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className={styles['seed-buttons']}>
+        <LoginButton />
         <button className={styles['btn-navbar--add']} onClick={handleSeedData}>
           Seed Data
         </button>

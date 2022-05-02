@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TaskProvider from './context/TaskContext';
+import TaskProvider from './context/TaskContext/TaskContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';

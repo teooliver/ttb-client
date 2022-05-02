@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
+import { Page404 } from '../../pages/404/Page404';
 import Clients from '../../pages/Clients/Clients';
+import Profile from '../../pages/Profile/Profile';
 import Projects from '../../pages/Projects/Projects';
 import Reports from '../../pages/Reports/Reports';
 import Tags from '../../pages/Tags/Tags';
@@ -15,6 +17,9 @@ export const AppRoutes = () => {
         <Route path={'/reports'} element={<Reports />} />
         <Route path='/clients' element={<Clients />} />
         <Route path='/tags' element={<Tags />} />
+        <Route path='/tags' element={<Tags />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='*' element={<Page404 />} />
       </Routes>
     </section>
   );
