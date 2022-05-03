@@ -1,5 +1,5 @@
 import { useQueryClient } from 'react-query';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Tags } from '../icons/Tags';
 import { API_URL } from '../../utils/api-client';
 import { ClockHistory } from '../icons/ClockHistory';
@@ -10,6 +10,7 @@ import styles from './Navbar.module.css';
 import { LoginButton } from '../LoginButton/LoginButton';
 
 const Navbar = () => {
+  // const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const handleRemoveAllData = () => {
@@ -110,9 +111,22 @@ const Navbar = () => {
             Tags
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? styles['active-link'] : ''
+            }
+            to='/profile'
+          >
+            <span>
+              <Tags />
+            </span>
+            Profile
+          </NavLink>
+        </li>
       </ul>
       <div className={styles['seed-buttons']}>
-        <LoginButton />
+        {/* <LoginButton /> */}
         <button className={styles['btn-navbar--add']} onClick={handleSeedData}>
           Seed Data
         </button>

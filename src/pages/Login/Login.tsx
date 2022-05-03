@@ -1,17 +1,22 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth, User } from '../../context/AuthContext/AuthContext';
 
 const Login = () => {
   const [user, setUser] = useState<User>({ name: '', email: '' });
   const auth = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // location.state is unknow?
+  // @ts-ignore
+  let from = location.state?.from?.pathname || '/';
 
   const handleLogin = () => {
     // TODO: Add Validation
     if (user.name !== '' && user.email !== '') {
       auth.login(user);
-      navigate('/');
+      navigate(from, { replace: true });
     }
   };
 

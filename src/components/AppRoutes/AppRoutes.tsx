@@ -7,6 +7,7 @@ import Projects from '../../pages/Projects/Projects';
 import Reports from '../../pages/Reports/Reports';
 import Tags from '../../pages/Tags/Tags';
 import TimeTracker from '../../pages/TimeTracker/TimeTracker';
+import { RequireAuth } from '../RequireAuth/RequireAuth';
 import styles from './AppRoutes.module.css';
 
 export const AppRoutes = () => {
@@ -19,7 +20,14 @@ export const AppRoutes = () => {
         <Route path='/clients' element={<Clients />} />
         <Route path='/tags' element={<Tags />} />
         <Route path='/tags' element={<Tags />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route
+          path='/profile'
+          element={
+            <RequireAuth>
+              <Profile />
+            </RequireAuth>
+          }
+        />
         <Route path='/login' element={<Login />} />
         <Route path='*' element={<Page404 />} />
       </Routes>
