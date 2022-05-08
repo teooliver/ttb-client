@@ -2,7 +2,6 @@
 
 #### Frontend
 
-- test actions
 - add fake auth (simple user/password form to ilustrate the flow)
 - Run Playwright and Storybook in Docker
 - Add `husky` end configure git hooks for commits, merge and push
