@@ -1,90 +1,25 @@
 {
-  "name": "client",
+  "name": "ttb-client",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@reach/dialog": "^0.16.2",
-    "@reach/listbox": "^0.16.2",
-    "@reach/menu-button": "^0.16.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/user-event": "^12.1.10",
-    "chart.js": "^3.6.2",
-    "react": "^18.0.0",
-    "react-chartjs-2": "^4.0.0",
-    "react-datepicker": "^4.4.0",
-    "react-dom": "^18.0.0",
-    "react-query": "^3.33.7",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "test:e2e": "playwright test",
-    "test:snapshot-update": "playwright test --update-snapshots",
-    "clean:test:ports": "npx kill-port 3000",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "list:tests": "find . -type f -name '*.test.*' ! -path './node_modules/*'",
-    "list:e2e-tests": "find . -type f -name '*.e2e.test.*' ! -path './node_modules/*'",
-    "list:stories": "find . -type f -name '*.stories.*' ! -path './node_modules/*'"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.18.0",
-    "@storybook/addon-actions": "^6.4.18",
-    "@storybook/addon-essentials": "^6.4.18",
-    "@storybook/addon-links": "^6.4.18",
-    "@storybook/node-logger": "^6.4.18",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.4.18",
-    "@testing-library/react": "^13.0.0",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-datepicker": "^4.3.2",
-    "@types/react-dom": "^17.0.0",
-    "msw": "^0.36.3",
-    "typescript": "^4.1.2"
-  },
-  "msw": {
-    "workerDirectory": "public"
-  },
-  "jest": {
-    "testMatch": [
-      "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[jt]s?(x)",
-      "!**/?(*.)+(e2e.spec|e2e.test).[jt]s?(x)"
-    ]
+    "@types/node": "^17.0.34",
+    "@types/react": "18.0.9",
+    "typescript": "4.6.4"
   }
 }
