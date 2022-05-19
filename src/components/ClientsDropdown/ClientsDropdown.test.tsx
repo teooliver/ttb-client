@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { cleanup, render, fireEvent, waitFor } from '@testing-library/react';
 import ClientsDropdown from './ClientsDropdown';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { server } from '../../mocks/server';
+import { server } from '../../../mocks/server';
 import { rest } from 'msw';
 
 afterAll(cleanup);

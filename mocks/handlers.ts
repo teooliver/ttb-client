@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { API_URL } from '../utils/api-client';
+import { API_URL } from '../src/utils/api-client';
 import { getClientRes } from './data/getClientsRes';
 import { getGroupedTasksRes } from './data/getGroupedTasksRes';
 import { getProjectsRes } from './data/getProjectsRes';

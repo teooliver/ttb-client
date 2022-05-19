@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { value useAuth } from '../../../context/AuthContext/AuthContext';
+import { value useAuth } from '../../context/AuthContext/AuthContext';
 
 const Profile = () => {
   const auth = useAuth();

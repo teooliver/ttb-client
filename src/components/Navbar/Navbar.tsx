@@ -1,5 +1,6 @@
 import { useQueryClient } from 'react-query';
-import { NavLink, useNavigate } from 'react-router-dom';
+// import { NavLink as Link, useNavigate } from 'react-router-dom';
+import Link from 'next/link';
 import { Tags } from '../icons/Tags';
 import { API_URL } from '../../utils/api-client';
 import { ClockHistory } from '../icons/ClockHistory';
@@ -8,9 +9,11 @@ import { Folder } from '../icons/Folder';
 import { PersonSquare } from '../icons/PersonSquare';
 import styles from './Navbar.module.css';
 import { LoginButton } from '../LoginButton/LoginButton';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
   // const navigate = useNavigate();
+  const router = useRouter();
   const queryClient = useQueryClient();
 
   const handleRemoveAllData = () => {
@@ -47,82 +50,90 @@ const Navbar = () => {
 
       <ul>
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles['active-link'] : ''
-            }
-            to='/'
+          <Link
+            className={router.pathname === '/' ? styles['active-link'] : ''}
+            href='/'
           >
-            <span>
-              <ClockHistory />
-            </span>
-            Timer
-          </NavLink>
+            <>
+              <span>
+                <ClockHistory />
+              </span>
+              Timer
+            </>
+          </Link>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles['active-link'] : ''
+          <Link
+            className={
+              router.pathname === '/reports' ? styles['active-link'] : ''
             }
-            to='/reports'
+            href='/reports'
           >
-            <span>
-              <FileText />
-            </span>
-            Reports
-          </NavLink>
+            <>
+              <span>
+                <FileText />
+              </span>
+              Reports
+            </>
+          </Link>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles['active-link'] : ''
+          <Link
+            className={
+              router.pathname === '/projects' ? styles['active-link'] : ''
             }
-            to='/projects'
+            href='/projects'
           >
-            <span>
-              <Folder />
-            </span>
-            Projects
-          </NavLink>
+            <>
+              <span>
+                <Folder />
+              </span>
+              Projects
+            </>
+          </Link>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles['active-link'] : ''
+          <Link
+            className={
+              router.pathname === '/clients' ? styles['active-link'] : ''
             }
-            to='/clients'
+            href='/clients'
           >
-            <span>
-              <PersonSquare />
-            </span>
-            Clients
-          </NavLink>
+            <>
+              <span>
+                <PersonSquare />
+              </span>
+              Clients
+            </>
+          </Link>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles['active-link'] : ''
-            }
-            to='/tags'
+          <Link
+            className={router.pathname === '/tags' ? styles['active-link'] : ''}
+            href='/tags'
           >
-            <span>
-              <Tags />
-            </span>
-            Tags
-          </NavLink>
+            <>
+              <span>
+                <Tags />
+              </span>
+              Tags
+            </>
+          </Link>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles['active-link'] : ''
+          <Link
+            className={
+              router.pathname === '/profile' ? styles['active-link'] : ''
             }
-            to='/profile'
+            href='/profile'
           >
-            <span>
-              <Tags />
-            </span>
-            Profile
-          </NavLink>
+            <>
+              <span>
+                <Tags />
+              </span>
+              Profile
+            </>
+          </Link>
         </li>
       </ul>
       <div className={styles['seed-buttons']}>

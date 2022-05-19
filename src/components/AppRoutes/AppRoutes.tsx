@@ -1,6 +1,6 @@
 import { value Route, value Routes } from 'react-router-dom';
 import { value Page404 } from '../../pages/404/Page404';
-import Clients from '../../pages/Clients/Clients';
+import Clients from '../../pages/clients';
 import Login from '../../old_cra_files/src/pages/Login/Login';
 import Profile from '../../old_cra_files/src/pages/Profile/Profile';
 import Projects from '../../old_cra_files/src/pages/Projects/Projects';

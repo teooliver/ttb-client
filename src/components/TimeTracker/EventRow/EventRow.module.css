@@ -99,14 +99,14 @@
   cursor: pointer;
 }
 
-.list-item [data-reach-menu-list],
-[data-reach-menu-items] {
+/* .list-item [data-reach-menu-list], */
+/* [data-reach-menu-items] {
   margin: 0;
   padding: 0;
   border-radius: 0.3rem;
   background-color: white;
   border: none;
-}
+} */
 
 .list-item [data-reach-menu-item] {
   margin: 0;
