@@ -99,8 +99,8 @@
   cursor: pointer;
 }
 
-/* .list-item [data-reach-menu-list], */
-/* [data-reach-menu-items] {
+/* .list-item [data-reach-menu-list], 
+[data-reach-menu-items] {
   margin: 0;
   padding: 0;
   border-radius: 0.3rem;
@@ -108,8 +108,17 @@
   border: none;
 } */
 
-.list-item [data-reach-menu-item] {
+.menu-list-container {
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  border-radius: 0.3rem;
+  background-color: white;
+  border: none;
+}
+
+.menu-item-btn {
   margin: 0;
   border: none;
   border-radius: 0.3rem;
-}
+} 

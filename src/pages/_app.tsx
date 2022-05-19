@@ -8,6 +8,9 @@ import Navbar from '../components/Navbar/Navbar';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import TaskProvider from '../context/TaskContext/TaskContext';
 import styles from '../components/AppRoutes/AppRoutes.module.css';
+import 'react-datepicker/dist/react-datepicker.css';
+import '@reach/listbox/styles.css';
+import '@reach/dialog/styles.css';
 
 const queryClient = new QueryClient();
 

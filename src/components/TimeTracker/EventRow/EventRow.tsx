@@ -102,8 +102,11 @@ const EventRow: FC<Props> = ({ task }) => {
               <MenuButton>
                 <ThreeDotsVertical />
               </MenuButton>
-              <MenuList>
-                <MenuItem onSelect={() => deletePostMutation.mutate(task._id!)}>
+              <MenuList className={styles['menu-list-container']}>
+                <MenuItem
+                  className={styles['menu-item-btn']}
+                  onSelect={() => deletePostMutation.mutate(task._id!)}
+                >
                   Delete
                 </MenuItem>
               </MenuList>

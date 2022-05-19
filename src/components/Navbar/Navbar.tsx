@@ -1,5 +1,4 @@
 import { useQueryClient } from 'react-query';
-// import { NavLink as Link, useNavigate } from 'react-router-dom';
 import Link from 'next/link';
 import { Tags } from '../icons/Tags';
 import { API_URL } from '../../utils/api-client';
@@ -12,7 +11,6 @@ import { LoginButton } from '../LoginButton/LoginButton';
 import { useRouter } from 'next/router';
 
 const Navbar = () => {
-  // const navigate = useNavigate();
   const router = useRouter();
   const queryClient = useQueryClient();
 
@@ -31,11 +29,11 @@ const Navbar = () => {
     // seedData(queryClient);
     try {
       fetch(`${API_URL}/seed/clients`)
-        .then((res) => fetch(`${API_URL}/seed/projects`))
-        .then((res) => queryClient.invalidateQueries('projects'))
-        .then((res) => fetch(`${API_URL}/seed/tasks`))
-        .then((res) => queryClient.invalidateQueries('tasks'))
-        .then((res) => queryClient.invalidateQueries('clients'));
+        .then((_res) => fetch(`${API_URL}/seed/projects`))
+        .then((_res) => queryClient.invalidateQueries('projects'))
+        .then((_res) => fetch(`${API_URL}/seed/tasks`))
+        .then((_res) => queryClient.invalidateQueries('tasks'))
+        .then((_res) => queryClient.invalidateQueries('clients'));
     } catch (error) {
       console.log(error);
     }
@@ -49,90 +47,86 @@ const Navbar = () => {
       </div>
 
       <ul>
-        <li>
-          <Link
-            className={router.pathname === '/' ? styles['active-link'] : ''}
-            href='/'
-          >
-            <>
+        <li
+          className={
+            router.pathname === '/timetracker' ? styles['active-link'] : ''
+          }
+        >
+          <Link href='/timetracker'>
+            <a>
               <span>
                 <ClockHistory />
               </span>
               Timer
-            </>
+            </a>
           </Link>
         </li>
-        <li>
-          <Link
-            className={
-              router.pathname === '/reports' ? styles['active-link'] : ''
-            }
-            href='/reports'
-          >
-            <>
+        <li
+          className={
+            router.pathname === '/reports' ? styles['active-link'] : ''
+          }
+        >
+          <Link href='/reports'>
+            <a>
               <span>
                 <FileText />
               </span>
               Reports
-            </>
+            </a>
           </Link>
         </li>
-        <li>
-          <Link
-            className={
-              router.pathname === '/projects' ? styles['active-link'] : ''
-            }
-            href='/projects'
-          >
-            <>
+        <li
+          className={
+            router.pathname === '/projects' ? styles['active-link'] : ''
+          }
+        >
+          <Link href='/projects'>
+            <a>
               <span>
                 <Folder />
               </span>
               Projects
-            </>
+            </a>
           </Link>
         </li>
-        <li>
-          <Link
-            className={
-              router.pathname === '/clients' ? styles['active-link'] : ''
-            }
-            href='/clients'
-          >
-            <>
+        <li
+          className={
+            router.pathname === '/clients' ? styles['active-link'] : ''
+          }
+        >
+          <Link href='/clients'>
+            <a>
               <span>
                 <PersonSquare />
               </span>
               Clients
-            </>
+            </a>
           </Link>
         </li>
-        <li>
-          <Link
-            className={router.pathname === '/tags' ? styles['active-link'] : ''}
-            href='/tags'
-          >
-            <>
+        <li
+          className={router.pathname === '/tags' ? styles['active-link'] : ''}
+        >
+          <Link href='/tags'>
+            <a>
               <span>
                 <Tags />
               </span>
               Tags
-            </>
+            </a>
           </Link>
         </li>
-        <li>
-          <Link
-            className={
-              router.pathname === '/profile' ? styles['active-link'] : ''
-            }
-            href='/profile'
-          >
-            <>
+        <li
+          className={
+            router.pathname === '/profile' ? styles['active-link'] : ''
+          }
+        >
+          <Link href='/profile'>
+            <a>
               <span>
                 <Tags />
               </span>
               Profile
-            </>
+            </a>
           </Link>
         </li>
       </ul>
