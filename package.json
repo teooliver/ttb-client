@@ -15,7 +15,13 @@
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:e2e": "playwright test",
+    "test:snapshot-update": "playwright test --update-snapshots",
+    "clean:test:ports": "npx kill-port 3000",
+    "list:tests": "find . -type f -name '*.test.*' ! -path './node_modules/*'",
+    "list:e2e-tests": "find . -type f -name '*.e2e.test.*' ! -path './node_modules/*'",
+    "list:stories": "find . -type f -name '*.stories.*' ! -path './node_modules/*'"
   },
   "dependencies": {
     "@reach/dialog": "^0.17.0",
