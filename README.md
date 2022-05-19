@@ -21,6 +21,6 @@ https://github.com/teooliver/ttb-server
 https://github.com/teooliver/ttb-client
 
 - Typescript
-- React
+- Next.js
 
 > This project uses MongoDB and provides a simple docker-compose.yml file to set it up in your system.
