@@ -1,6 +1,5 @@
-import { cleanup, render, waitFor } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-// import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Navbar';
 
 afterAll(cleanup);
@@ -29,9 +28,7 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          {/* <BrowserRouter> */}
           <Navbar />
-          {/* </BrowserRouter> */}
         </QueryClientProvider>
       );
     };
@@ -44,9 +41,7 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          {/* <BrowserRouter> */}
           <Navbar />
-          {/* </BrowserRouter> */}
         </QueryClientProvider>
       );
     };
@@ -64,9 +59,7 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          {/* <BrowserRouter> */}
           <Navbar />
-          {/* </BrowserRouter> */}
         </QueryClientProvider>
       );
     };

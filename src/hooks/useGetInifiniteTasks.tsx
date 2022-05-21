@@ -7,6 +7,7 @@ const getInifiniteTasks = async ({ pageParam = 1 }) => {
   const res = await fetch(`${API_URL}/tasks/group?page=${pageParam}`).then(
     (res) => res.json()
   );
+
   return res as TaskAfterGroupedResult;
 };
 

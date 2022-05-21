@@ -4,6 +4,8 @@ import { getClientRes } from './data/getClientsRes';
 import { getGroupedTasksRes } from './data/getGroupedTasksRes';
 import { getProjectsRes } from './data/getProjectsRes';
 
+console.log('HANLDERS ====>');
+
 export const handlers = [
   rest.get(`${API_URL}/projects`, (_req, res, ctx) => {
     return res(
@@ -22,7 +24,9 @@ export const handlers = [
   }),
 
   rest.get(`${API_URL}/tasks/group`, (req, res, ctx) => {
+    console.log('GOT HERE');
     console.log('==============> GOT HERE', req.url.searchParams);
+
     return res(
       ctx.status(200),
 

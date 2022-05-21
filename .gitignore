@@ -70,3 +70,6 @@ playwright-report/
 /old_cra_files
 
 .env
+/test-results/
+/playwright-report/
+/playwright/.cache/

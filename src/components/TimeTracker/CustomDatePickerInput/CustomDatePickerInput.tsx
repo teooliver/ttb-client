@@ -14,6 +14,7 @@ interface Props {
 const CustomDatePickerInput: FC<Props> = ({ value, onClick }) => {
   return (
     <button className={styles['custom-datepicker-input']} onClick={onClick}>
+      {/* @ts-ignore */}
       {value}
     </button>
   );

@@ -43,7 +43,6 @@
     "@babel/core": "^7.17.12",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
-    "@playwright/test": "^1.22.1",
     "@storybook/addon-actions": "^6.5.3",
     "@storybook/addon-essentials": "^6.5.3",
     "@storybook/addon-interactions": "^6.5.3",
@@ -71,5 +70,8 @@
   },
   "resolutions": {
     "webpack": "^5"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

@@ -18,8 +18,8 @@ const Navbar = () => {
     // removeAllData(queryClient);
     try {
       fetch(`${API_URL}/seed/remove`)
-        .then((res) => queryClient.invalidateQueries('projects'))
-        .then((res) => queryClient.invalidateQueries('tasks'));
+        .then((res) => queryClient.invalidateQueries(['projects']))
+        .then((res) => queryClient.invalidateQueries(['tasks']));
     } catch (error) {
       console.log(error);
     }
@@ -30,10 +30,10 @@ const Navbar = () => {
     try {
       fetch(`${API_URL}/seed/clients`)
         .then((_res) => fetch(`${API_URL}/seed/projects`))
-        .then((_res) => queryClient.invalidateQueries('projects'))
+        .then((_res) => queryClient.invalidateQueries(['projects']))
         .then((_res) => fetch(`${API_URL}/seed/tasks`))
-        .then((_res) => queryClient.invalidateQueries('tasks'))
-        .then((_res) => queryClient.invalidateQueries('clients'));
+        .then((_res) => queryClient.invalidateQueries(['tasks']))
+        .then((_res) => queryClient.invalidateQueries(['clients']));
     } catch (error) {
       console.log(error);
     }
