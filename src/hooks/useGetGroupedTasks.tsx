@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query';
 import { TaskAfterGroupedResult } from '../types/task';
 import { API_URL } from '../utils/api-client';
+import fetch from 'node-fetch';
 
 //TODO:add option for sending params.
 const getTasksGroupedByDate = async (size: number = 2) => {

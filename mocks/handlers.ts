@@ -21,7 +21,8 @@ export const handlers = [
     );
   }),
 
-  rest.get(`${API_URL}/tasks/group`, (_req, res, ctx) => {
+  rest.get(`${API_URL}/tasks/group`, (req, res, ctx) => {
+    console.log('==============> GOT HERE', req.url.searchParams);
     return res(
       ctx.status(200),
 

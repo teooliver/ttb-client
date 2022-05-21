@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { IClient } from '../types/clients';
-import { API_URL } from '../utils/api-client';
-import fetch from 'node-fetch';
+import { IClient } from '../src/types/clients';
+import { API_URL } from '../src/utils/api-client';
 
 const createClient = async (newClient: string) => {
   const res = await fetch(`${API_URL}/clients`, {

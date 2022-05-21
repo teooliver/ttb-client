@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query';
-import { ProjectsGroupByClient } from '../types/projects';
-import { API_URL } from '../utils/api-client';
-import fetch from 'node-fetch';
+import { ProjectsGroupByClient } from '../src/types/projects';
+import { API_URL } from '../src/utils/api-client';
 
 const getProjects = async () => {
   const res = await fetch(`${API_URL}/projects/`).then((res) => res.json());

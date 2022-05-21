@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { API_URL } from '../utils/api-client';
+import fetch from 'node-fetch';
 
 const deleteProject = async (id: string) => {
   const res = await fetch(`${API_URL}/projects/${id}`, {
@@ -18,8 +19,8 @@ export const useDeleteProject = () => {
 
   const deleteProjectMutation = useMutation(deleteProject, {
     onSuccess: () => {
-      queryClient.invalidateQueries('projects');
-      queryClient.invalidateQueries('tasks');
+      queryClient.invalidateQueries(['projects']);
+      queryClient.invalidateQueries(['tasks']);
     },
   });
 

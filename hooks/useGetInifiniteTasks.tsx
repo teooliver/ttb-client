@@ -1,7 +1,6 @@
 import { useInfiniteQuery } from 'react-query';
-import { TaskAfterGroupedResult } from '../types/task';
-import { API_URL } from '../utils/api-client';
-import fetch from 'node-fetch';
+import { TaskAfterGroupedResult } from '../src/types/task';
+import { API_URL } from '../src/utils/api-client';
 
 const getInifiniteTasks = async ({ pageParam = 1 }) => {
   const res = await fetch(`${API_URL}/tasks/group?page=${pageParam}`).then(
@@ -13,7 +12,7 @@ const getInifiniteTasks = async ({ pageParam = 1 }) => {
 export const useGetInifiniteTasks = () => {
   return useInfiniteQuery(['infinite-tasks'], getInifiniteTasks, {
     getNextPageParam: (lastPage, _allPages) => {
-      if (lastPage?.pagination?.next_page) {
+      if (lastPage.pagination.next_page) {
         return lastPage.pagination.next_page;
       }
     },

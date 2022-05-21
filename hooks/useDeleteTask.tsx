@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { IDbTask } from '../types/task';
-import { API_URL } from '../utils/api-client';
-import fetch from 'node-fetch';
+import { IDbTask } from '../src/types/task';
+import { API_URL } from '../src/utils/api-client';
 
 const deleteTask = async (id: string) => {
   const res = await fetch(`${API_URL}/tasks/${id}`, {

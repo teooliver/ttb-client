@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { IDbTask } from '../types/task';
-import { API_URL } from '../utils/api-client';
-import fetch from 'node-fetch';
+import { IDbTask } from '../src/types/task';
+import { API_URL } from '../src/utils/api-client';
 
 const updateTask = async (task: Partial<IDbTask>) => {
   const editable_fields = {

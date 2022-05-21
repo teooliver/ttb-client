@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { IDbProject } from '../types/projects';
-import { API_URL } from '../utils/api-client';
-import fetch from 'node-fetch';
+import { IDbProject } from '../src/types/projects';
+import { API_URL } from '../src/utils/api-client';
 
 export interface ProjectCreate {
   name: string;

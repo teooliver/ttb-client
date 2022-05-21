@@ -1,9 +1,20 @@
 import { cleanup, render, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Navbar';
 
 afterAll(cleanup);
+
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      route: '/',
+      pathname: '',
+      query: '',
+      asPath: '',
+    };
+  },
+}));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,9 +29,9 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <Navbar />
-          </BrowserRouter>
+          {/* <BrowserRouter> */}
+          <Navbar />
+          {/* </BrowserRouter> */}
         </QueryClientProvider>
       );
     };
@@ -33,9 +44,9 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <Navbar />
-          </BrowserRouter>
+          {/* <BrowserRouter> */}
+          <Navbar />
+          {/* </BrowserRouter> */}
         </QueryClientProvider>
       );
     };
@@ -53,9 +64,9 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <Navbar />
-          </BrowserRouter>
+          {/* <BrowserRouter> */}
+          <Navbar />
+          {/* </BrowserRouter> */}
         </QueryClientProvider>
       );
     };
