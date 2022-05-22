@@ -4,7 +4,6 @@ import { useAuth } from '../../context/AuthContext/AuthContext';
 import styles from './LoginButton.module.css';
 
 export const LoginButton = () => {
-  const [isLogged, setIsLogged] = useState(false);
   const auth = useAuth();
   const router = useRouter();
 
