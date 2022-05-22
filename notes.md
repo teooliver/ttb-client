@@ -2,7 +2,10 @@
 
 #### Frontend
 
-- add fake auth (simple user/password form to ilustrate the flow)
+- add fake "auth" (simple user/password form to ilustrate the flow)
+- add validation to "fake" auth
+- after auth navigate user to previous page (insteaf of home)
+  Setup cookies to show/hide elements base on user privacy response. Good for writing diferent types of tests based on cookies.
 - Run Playwright and Storybook in Docker
 - Add ci test pipelines
 - Add tests to `ProjectSelect` and `StopWatch`
@@ -11,7 +14,6 @@
 - Redo all tests using jest and Playwright with MSW.
 - Add pagination to Reports chart (choose spefic start/end dates or previous/next week buttons).
 - Add modal asking the user if its first the first time in the app.
-  Setup cookies to show/hide cookie base on user response. Good for writing diferent types of tests based on cookies.
 - Extract Wrapper component in tests to jest config
 - add favicon
 - Check XState and StateMachines
