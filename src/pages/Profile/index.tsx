@@ -1,12 +1,12 @@
-// import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useAuth } from '../../context/AuthContext/AuthContext';
 
 const Profile = () => {
   const auth = useAuth();
-  // const navigate = useNavigate();
+  const router = useRouter();
 
   const handleLogout = () => {
-    // auth.logout(() => navigate('/'));
+    auth.logout(() => router.push('/'));
   };
   return (
     <div>

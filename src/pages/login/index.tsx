@@ -14,10 +14,7 @@ const Login = () => {
   const [user, setUser] = useState<User>({ name: '', email: '' });
   const auth = useAuth();
   const router = useRouter();
-  // const navigate = useNavigate();
-  // const location = useLocation();
 
-  // location.state is unknow?
   // @ts-ignore
   // let from = location.state?.from?.pathname || '/';
   let from = router.locale || '/';
@@ -25,7 +22,6 @@ const Login = () => {
   const handleLogin = () => {
     // TODO: Add Validation
     if (user.name !== '' && user.email !== '') {
-      // auth.login(user, () => navigate(from, { replace: true }));
       auth.login(user, () => router.push(from));
     }
   };

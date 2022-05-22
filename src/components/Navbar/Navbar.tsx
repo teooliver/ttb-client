@@ -131,7 +131,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className={styles['seed-buttons']}>
-        {/* <LoginButton /> */}
+        <LoginButton />
         <button className={styles['btn-navbar--add']} onClick={handleSeedData}>
           Seed Data
         </button>

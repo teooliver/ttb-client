@@ -1,15 +1,23 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useAuth } from '../../context/AuthContext/AuthContext';
 import styles from './LoginButton.module.css';
 
 export const LoginButton = () => {
   const [isLogged, setIsLogged] = useState(false);
+  const auth = useAuth();
+  const router = useRouter();
 
   const handleLoginClick = () => {
     // TODO: Open login / signup Modal/Popup (Side Nav to the righ?)
-    setIsLogged(() => !isLogged);
+    if (auth.user) {
+      auth.logout();
+      return;
+    }
+    router.push('/login');
   };
 
-  if (isLogged) {
+  if (auth.user) {
     return (
       <button
         className={styles['btn-navbar--login']}
