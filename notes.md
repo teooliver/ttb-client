@@ -2,7 +2,8 @@
 
 #### Frontend
 
-- add fake "auth" (simple user/password form to ilustrate the flow)
+- Use react-query with Nextjs properly. (Define the best strategy (SSR - CSR etc))
+- add fake "auth" (simple user/password form to ilustrate the flow and write tests)
 - add validation to "fake" auth
 - after auth navigate user to previous page (insteaf of home)
   Setup cookies to show/hide elements base on user privacy response. Good for writing diferent types of tests based on cookies.
