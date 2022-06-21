@@ -3,6 +3,7 @@
 #### Frontend
 
 - Use react-query with Nextjs properly. (Define the best strategy (SSR - CSR etc))
+- Dockerize Nextjs app.
 - add fake "auth" (simple user/password form to ilustrate the flow and write tests)
 - add validation to "fake" auth
 - after auth navigate user to previous page (insteaf of home)
