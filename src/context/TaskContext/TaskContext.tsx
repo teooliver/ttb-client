@@ -1,4 +1,10 @@
-import React, { createContext, useState } from 'react';
+import React, {
+  createContext,
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+  useState,
+} from 'react';
 import { TaskCreate } from '../../hooks/useCreateTask';
 
 interface TaskContextDefaults {
@@ -18,10 +24,18 @@ export const TaskContext = createContext<TaskContextDefaults>({
 });
 TaskContext.displayName = 'TaskContext';
 
-const TaskProvider = (props: any) => {
+interface TaskProviderTypes {
+  children: JSX.Element;
+}
+
+const TaskProvider = ({ children }: TaskProviderTypes) => {
   const [task, setTask] = useState<TaskCreate>(defaultTask);
 
-  return <TaskContext.Provider value={{ task, setTask }} {...props} />;
+  return (
+    <TaskContext.Provider value={{ task, setTask }}>
+      {children}
+    </TaskContext.Provider>
+  );
 };
 
 export default TaskProvider;

@@ -1,5 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { AuthProvider } from '../../context/AuthContext/AuthContext';
 import Navbar from './Navbar';
 
 afterAll(cleanup);
@@ -28,7 +29,9 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <Navbar />
+          <AuthProvider>
+            <Navbar />
+          </AuthProvider>
         </QueryClientProvider>
       );
     };
@@ -41,7 +44,9 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <Navbar />
+          <AuthProvider>
+            <Navbar />
+          </AuthProvider>
         </QueryClientProvider>
       );
     };
@@ -59,7 +64,9 @@ describe('Test Navbar Component', () => {
     const Wrapper = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <Navbar />
+          <AuthProvider>
+            <Navbar />
+          </AuthProvider>
         </QueryClientProvider>
       );
     };

@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext/AuthContext';
 import styles from './LoginButton.module.css';
 

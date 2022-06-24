@@ -18,8 +18,8 @@ const Navbar = () => {
     // removeAllData(queryClient);
     try {
       fetch(`${API_URL}/seed/remove`)
-        .then((res) => queryClient.invalidateQueries(['projects']))
-        .then((res) => queryClient.invalidateQueries(['tasks']));
+        .then((_res) => queryClient.invalidateQueries(['projects']))
+        .then((_res) => queryClient.invalidateQueries(['tasks']));
     } catch (error) {
       console.log(error);
     }

@@ -25,7 +25,7 @@ enum AnimationDurationValues {
 }
 
 const disableAnimationOnTest = (): AnimationDurationValues => {
-  // TODO: Only disbale animation when runing Tests
+  // Disbale animation when runing Tests
   if (process.env.NODE_ENV === 'test' || process.env.REACT_APP_ENV === 'test') {
     return AnimationDurationValues.DISABLED;
   }
