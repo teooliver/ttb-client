@@ -17,6 +17,7 @@ export const seedData = (queryClient: QueryClient): void => {
 export const removeAllData = (queryClient: QueryClient): void => {
   try {
     fetch(`${API_URL}/seed/remove`)
+      .then((_res) => queryClient.invalidateQueries('clients'))
       .then((_res) => queryClient.invalidateQueries('projects'))
       .then((_res) => queryClient.invalidateQueries('tasks'));
   } catch (error) {

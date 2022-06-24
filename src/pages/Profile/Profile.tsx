@@ -5,11 +5,8 @@ const Profile = () => {
   const auth = useAuth();
   const navigate = useNavigate();
 
-  console.log('USER', auth.user);
-
   const handleLogout = () => {
-    auth.logout();
-    navigate('/');
+    auth.logout(() => navigate('/'));
   };
   return (
     <div>

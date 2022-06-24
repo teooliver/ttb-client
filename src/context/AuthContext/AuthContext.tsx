@@ -9,29 +9,31 @@ interface AuthProviderProps {
   children: React.ReactElement;
 }
 
-interface AuthContextDefaults {
+interface AuthContextType {
   user: User | null;
-  login: (user: User) => void;
-  logout: () => void;
+  login: (user: User, callback: VoidFunction) => void;
+  logout: (callback?: VoidFunction) => void;
 }
 
-// TODO: Better typing for default AuthContext, maybe
-// AuthContextDefaults | null ?
-const AuthContext = createContext<AuthContextDefaults>({
-  user: null,
-  login: () => {},
-  logout: () => {},
-});
+const AuthContext = createContext<AuthContextType>(null!);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
-  const login = (user: User) => {
+  const login = (user: User, callback?: VoidFunction) => {
     setUser(user);
+    if (!callback) {
+      return;
+    }
+    callback();
   };
 
-  const logout = () => {
+  const logout = (callback?: VoidFunction) => {
     setUser(null);
+    if (!callback) {
+      return;
+    }
+    callback();
   };
 
   return (

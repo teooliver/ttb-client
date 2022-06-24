@@ -15,8 +15,7 @@ const Login = () => {
   const handleLogin = () => {
     // TODO: Add Validation
     if (user.name !== '' && user.email !== '') {
-      auth.login(user);
-      navigate(from, { replace: true });
+      auth.login(user, () => navigate(from, { replace: true }));
     }
   };
 
