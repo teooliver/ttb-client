@@ -28,7 +28,7 @@ interface TaskProviderTypes {
   children: JSX.Element;
 }
 
-const TaskProvider = ({ children }: TaskProviderTypes) => {
+export const TaskProvider = ({ children }: TaskProviderTypes) => {
   const [task, setTask] = useState<TaskCreate>(defaultTask);
 
   return (
@@ -37,5 +37,3 @@ const TaskProvider = ({ children }: TaskProviderTypes) => {
     </TaskContext.Provider>
   );
 };
-
-export default TaskProvider;

@@ -1,6 +1,7 @@
 import * as NextImage from 'next/image';
-// import TaskProvider from '../src/context/TaskContext';
-import TaskProvider from '../src/context/TaskContext/TaskContext';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { TaskProvider } from '../src/context/TaskContext/TaskContext';
+import { AuthProvider } from '../src/context/AuthContext/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import '../src/styles/reset.css';
 import '../src/styles/variables.css';
@@ -59,14 +60,19 @@ export const parameters = {
     ],
   },
   viewport: { viewports: customViewports },
+  nextRouter: {
+    Provider: RouterContext.Provider,
+  },
 };
 const queryClient = new QueryClient();
 export const decorators = [
   (Story) => (
     <QueryClientProvider client={queryClient}>
-      <TaskProvider>
-        <Story />
-      </TaskProvider>
+      <AuthProvider>
+        <TaskProvider>
+          <Story />
+        </TaskProvider>
+      </AuthProvider>
     </QueryClientProvider>
   ),
 ];

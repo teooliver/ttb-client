@@ -6,7 +6,7 @@ import '../styles/global.css';
 import { AuthProvider } from '../context/AuthContext/AuthContext';
 import Navbar from '../components/Navbar/Navbar';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import TaskProvider from '../context/TaskContext/TaskContext';
+import { TaskProvider } from '../context/TaskContext/TaskContext';
 import styles from '../components/AppRoutes/AppRoutes.module.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import '@reach/listbox/styles.css';
