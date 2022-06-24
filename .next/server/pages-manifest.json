@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/404/Page404": "pages/404/Page404.html",
+  "/api/hello": "pages/api/hello.js",
+  "/clients": "pages/clients.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/projects": "pages/projects.html",
+  "/profile": "pages/profile.html",
+  "/reports": "pages/reports.html",
+  "/tags": "pages/tags.html",
+  "/timetracker": "pages/timetracker.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
