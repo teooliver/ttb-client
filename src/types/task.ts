@@ -20,9 +20,9 @@ export interface TaskAfterGroupedResult {
   pagination: {
     previous: string | null;
     next: string | null;
-    next_page: number;
-    previous_page: number;
-    total_pages: number;
+    next_page: number | null;
+    previous_page: number | null;
+    total_pages: number | null;
     total_items: number;
     size: number;
     start: number;

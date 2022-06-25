@@ -23,6 +23,16 @@ const EventsTable = () => {
   if (isError) {
     return (
       <div>
+        <p style={{ color: 'white', marginLeft: '1rem' }}>
+          Something Went Wrong
+        </p>
+      </div>
+    );
+  }
+
+  if (data?.pages[0].results.length === 0) {
+    return (
+      <div>
         <p style={{ color: 'white', marginLeft: '1rem' }}>No Data Available</p>
       </div>
     );
@@ -31,8 +41,18 @@ const EventsTable = () => {
   return (
     <>
       {isSuccess &&
-        data?.pages.map((groupedTasks) =>
-          groupedTasks.results.map((group) => {
+        data?.pages.map((groupedTasks) => {
+          if (groupedTasks.results.length === 0) {
+            return (
+              <div>
+                <p style={{ color: 'white', marginLeft: '1rem' }}>
+                  No Data Available
+                </p>
+              </div>
+            );
+          }
+
+          return groupedTasks.results.map((group) => {
             const [hours, minutes, seconds] = calculateTimer(
               Math.round(group.total_time)
             );
@@ -53,8 +73,8 @@ const EventsTable = () => {
                 ))}
               </ul>
             );
-          })
-        )}
+          });
+        })}
 
       {isSuccess && hasNextPage && (
         <div className={styles['load-more']}>

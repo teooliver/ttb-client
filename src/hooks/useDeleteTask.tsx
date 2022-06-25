@@ -15,15 +15,13 @@ const deleteTask = async (id: string) => {
   return res as IDbTask;
 };
 
-const useDeleteTask = () => {
+export const useDeleteTask = () => {
   const queryClient = useQueryClient();
 
   const deletePostMutation = useMutation(deleteTask, {
     onSuccess: () => {
-      queryClient.invalidateQueries(['tasks']);
+      queryClient.invalidateQueries(['infinite-tasks']);
     },
   });
   return deletePostMutation;
 };
-
-export { useDeleteTask };

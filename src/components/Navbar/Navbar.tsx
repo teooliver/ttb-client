@@ -9,31 +9,22 @@ import { PersonSquare } from '../icons/PersonSquare';
 import styles from './Navbar.module.css';
 import { LoginButton } from '../LoginButton/LoginButton';
 import { useRouter } from 'next/router';
+import { useDangerouslyRemoveAllData } from '../../hooks/useDangerouslyRemoveAllData';
 
 export const Navbar = () => {
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const handleRemoveAllData = async () => {
-    // removeAllData(queryClient);
-    queryClient.invalidateQueries();
+  const deleteAllData = useDangerouslyRemoveAllData();
+
+  const handleSeedData = async () => {
     try {
-      fetch(`${API_URL}/seed/remove`).then((_res) =>
-        queryClient.invalidateQueries()
+      await fetch(`${API_URL}/seed/all`).then(() =>
+        queryClient.invalidateQueries(['infinite-tasks'])
       );
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleSeedData = async () => {
-    // seedData(queryClient);
-    try {
-      fetch(`${API_URL}/seed/all`);
-    } catch (error) {
-      console.log(error);
-    }
-    queryClient.invalidateQueries();
   };
 
   return (
@@ -134,7 +125,7 @@ export const Navbar = () => {
         </button>
         <button
           className={styles['btn-navbar--remove']}
-          onClick={handleRemoveAllData}
+          onClick={() => deleteAllData.mutate()}
         >
           Remove All Data
         </button>

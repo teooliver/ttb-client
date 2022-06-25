@@ -6,6 +6,7 @@ import '../styles/global.css';
 import { AuthProvider } from '../context/AuthContext/AuthContext';
 import { Navbar } from '../components/Navbar/Navbar';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { TaskProvider } from '../context/TaskContext/TaskContext';
 import styles from '../components/AppRoutes/AppRoutes.module.css';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,6 +17,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
+      staleTime: 1000 * 20, // globally default to 20 seconds
     },
   },
 });
@@ -43,6 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </AuthProvider>
       </TaskProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
