@@ -1,7 +1,7 @@
 import { cleanup, render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthProvider } from '../../context/AuthContext/AuthContext';
-import Navbar from './Navbar';
+import { Navbar } from './Navbar';
 
 afterAll(cleanup);
 

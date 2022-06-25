@@ -10,16 +10,17 @@ import styles from './Navbar.module.css';
 import { LoginButton } from '../LoginButton/LoginButton';
 import { useRouter } from 'next/router';
 
-const Navbar = () => {
+export const Navbar = () => {
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const handleRemoveAllData = () => {
+  const handleRemoveAllData = async () => {
     // removeAllData(queryClient);
+    queryClient.invalidateQueries();
     try {
-      fetch(`${API_URL}/seed/remove`)
-        .then((_res) => queryClient.invalidateQueries(['projects']))
-        .then((_res) => queryClient.invalidateQueries(['tasks']));
+      fetch(`${API_URL}/seed/remove`).then((_res) =>
+        queryClient.invalidateQueries()
+      );
     } catch (error) {
       console.log(error);
     }
@@ -28,15 +29,11 @@ const Navbar = () => {
   const handleSeedData = async () => {
     // seedData(queryClient);
     try {
-      fetch(`${API_URL}/seed/clients`)
-        .then((_res) => fetch(`${API_URL}/seed/projects`))
-        .then((_res) => queryClient.invalidateQueries(['projects']))
-        .then((_res) => fetch(`${API_URL}/seed/tasks`))
-        .then((_res) => queryClient.invalidateQueries(['tasks']))
-        .then((_res) => queryClient.invalidateQueries(['clients']));
+      fetch(`${API_URL}/seed/all`);
     } catch (error) {
       console.log(error);
     }
+    queryClient.invalidateQueries();
   };
 
   return (
@@ -145,5 +142,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;

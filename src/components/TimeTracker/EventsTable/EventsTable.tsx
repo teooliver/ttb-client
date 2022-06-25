@@ -16,9 +16,20 @@ const EventsTable = () => {
     isLoading,
   } = useGetInifiniteTasks();
 
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return (
+      <div>
+        <p style={{ color: 'white', marginLeft: '1rem' }}>No Data Available</p>
+      </div>
+    );
+  }
+
   return (
     <>
-      {isLoading && <Spinner />}
       {isSuccess &&
         data?.pages.map((groupedTasks) =>
           groupedTasks.results.map((group) => {
@@ -54,14 +65,6 @@ const EventsTable = () => {
           >
             {isFetchingNextPage ? 'Loading more...' : 'Load More'}
           </button>
-        </div>
-      )}
-
-      {isError && (
-        <div>
-          <p style={{ color: 'white', marginLeft: '1rem' }}>
-            No Data Available
-          </p>
         </div>
       )}
     </>
