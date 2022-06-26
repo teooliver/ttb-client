@@ -2,7 +2,6 @@
 
 #### Frontend
 
-- Use react-query with Nextjs properly. (Define the best strategy (SSR - CSR etc))
 - Dockerize Nextjs app.
 - add fake "auth" (simple user/password form to ilustrate the flow and write tests)
 - add validation to "fake" auth
@@ -19,11 +18,13 @@
 - Extract Wrapper component in tests to jest config
 - add favicon
 - Check XState and StateMachines
+- ~~Use react-query with Nextjs properly. (Define the best strategy (SSR - CSR etc))~~
 - ~~Add `husky` end configure git hooks for commits, merge and push~~
 - ~~Should I keep using MSW or just mock fetch requests as normal?~~ (YES)
 - ~~Add Spinner for loading states.~~
 - ~~Implement `load more` in Timer page using `useInfiniteQuery`.~~
 - ~~fix Dockerfile/docker-compose~~
+- display tasks from new to old for each day
 
 # KNOWN BUGS:
 
