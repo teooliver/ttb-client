@@ -1,20 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { API_URL } from '../utils/api-client';
 import fetch from 'node-fetch';
-import { TaskAfterGroupedResult } from '../types/task';
 import { inifiniteTasksKeys } from './useGetInifiniteTasks';
-
-// const deleteTask = async (id: string) => {
-//   const res = await fetch(`${API_URL}/tasks/${id}`, {
-//     method: 'DELETE',
-//     headers: {
-//       Accept: 'application/json',
-//       'Content-Type': 'application/json',
-//     },
-//   }).then((res) => res.json());
-
-//   return res as IDbTask;
-// };
 
 const handleRemoveAllData = async () => {
   await fetch(`${API_URL}/seed/remove`);
@@ -23,10 +10,6 @@ const handleRemoveAllData = async () => {
 export const useDangerouslyRemoveAllData = () => {
   const queryClient = useQueryClient();
   const removeAllDataMutation = useMutation(handleRemoveAllData, {
-    // onSuccess: () => {
-    //   queryClient.invalidateQueries(['infinite-tasks']);
-    // },
-
     onMutate: async () => {
       // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
       await queryClient.cancelQueries([...inifiniteTasksKeys.all]);
