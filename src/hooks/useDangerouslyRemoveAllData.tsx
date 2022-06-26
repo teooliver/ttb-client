@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { API_URL } from '../utils/api-client';
 import fetch from 'node-fetch';
 import { TaskAfterGroupedResult } from '../types/task';
+import { inifiniteTasksKeys } from './useGetInifiniteTasks';
 
 // const deleteTask = async (id: string) => {
 //   const res = await fetch(`${API_URL}/tasks/${id}`, {
@@ -28,13 +29,15 @@ export const useDangerouslyRemoveAllData = () => {
 
     onMutate: async () => {
       // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
-      await queryClient.cancelQueries(['infinite-tasks']);
+      await queryClient.cancelQueries([...inifiniteTasksKeys.all]);
 
       // Snapshot the previous value
-      const previousTodos = queryClient.getQueryData(['infinite-tasks']);
+      const previousTodos = queryClient.getQueryData([
+        ...inifiniteTasksKeys.all,
+      ]);
 
       // Optimistically update to the new value
-      queryClient.setQueryData(['infinite-tasks'], (data: any) => ({
+      queryClient.setQueryData([...inifiniteTasksKeys.all], (data: any) => ({
         pages: [
           {
             results: [],
@@ -59,12 +62,15 @@ export const useDangerouslyRemoveAllData = () => {
 
     // If the mutation fails, use the context returned from onMutate to roll back
     onError: (err, newTodo, context) => {
-      queryClient.setQueryData(['infinite-tasks'], context?.previousTodos);
+      queryClient.setQueryData(
+        [...inifiniteTasksKeys.all],
+        context?.previousTodos
+      );
     },
 
     // Always refetch after error or success:
     onSettled: () => {
-      queryClient.invalidateQueries(['infinite-tasks']);
+      queryClient.invalidateQueries([...inifiniteTasksKeys.all]);
     },
   });
   return removeAllDataMutation;

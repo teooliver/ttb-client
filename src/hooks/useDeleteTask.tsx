@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { IDbTask } from '../types/task';
 import { API_URL } from '../utils/api-client';
 import fetch from 'node-fetch';
+import { inifiniteTasksKeys } from './useGetInifiniteTasks';
 
 const deleteTask = async (id: string) => {
   const res = await fetch(`${API_URL}/tasks/${id}`, {
@@ -20,7 +21,7 @@ export const useDeleteTask = () => {
 
   const deletePostMutation = useMutation(deleteTask, {
     onSuccess: () => {
-      queryClient.invalidateQueries(['infinite-tasks']);
+      queryClient.invalidateQueries([...inifiniteTasksKeys.all]);
     },
   });
   return deletePostMutation;

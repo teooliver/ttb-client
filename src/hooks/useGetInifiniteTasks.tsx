@@ -3,6 +3,10 @@ import { TaskAfterGroupedResult } from '../types/task';
 import { API_URL } from '../utils/api-client';
 import fetch from 'node-fetch';
 
+export const inifiniteTasksKeys = {
+  all: ['infinite-tasks'] as const,
+};
+
 const getInifiniteTasks = async ({ pageParam = 1 }) => {
   const res = await fetch(`${API_URL}/tasks/group?page=${pageParam}`).then(
     (res) => res.json()
@@ -12,7 +16,7 @@ const getInifiniteTasks = async ({ pageParam = 1 }) => {
 };
 
 export const useGetInifiniteTasks = () => {
-  return useInfiniteQuery(['infinite-tasks'], getInifiniteTasks, {
+  return useInfiniteQuery([...inifiniteTasksKeys.all], getInifiniteTasks, {
     getNextPageParam: (lastPage, _allPages) => {
       if (lastPage?.pagination?.next_page) {
         return lastPage.pagination.next_page;
