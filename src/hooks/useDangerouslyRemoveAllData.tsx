@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { API_URL } from '../utils/api-client';
 import fetch from 'node-fetch';
-import { inifiniteTasksKeys } from './useGetInifiniteTasks';
+import { inifiniteTasksKeys } from '../utils/queryKeys';
 
 const handleRemoveAllData = async () => {
   await fetch(`${API_URL}/seed/remove`);
